@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let depSelected = false;
     let arrSelected = false;
 
+    /**
+     * select에서 선택된 option의 텍스트 앞 2글자를 반환
+     */
     function getShortName(selectEl) {
         const optionText = selectEl.options[selectEl.selectedIndex].text;
         return optionText.slice(0, 2);
@@ -21,6 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updatePortInfo() {
         if (!depSelected || !arrSelected) {
+            portInfoWrap.style.display = 'none';
+            return;
+        }
+
+        // 출발/도착 공항 동일
+        if (depSelect.value === arrSelect.value) {
+            alert('동일한 공항입니다.');
             portInfoWrap.style.display = 'none';
             return;
         }
@@ -58,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         depSelect.value = arrSelect.value;
         arrSelect.value = tempValue;
 
-        // change 이벤트를 발화시켜 기존 로직처리
+        // change 이벤트를 발화시켜 기존 로직(updatePortInfo)이 처리하도록 함
         depSelect.dispatchEvent(new Event('change'));
         arrSelect.dispatchEvent(new Event('change'));
 
