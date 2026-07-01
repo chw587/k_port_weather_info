@@ -237,6 +237,7 @@
 
     <!-- 260626 희원 -->
     <link rel="stylesheet" href="./항공날씨정보 _  국내공항_여행_나라씨_files/new/new.css">
+    <script src="./항공날씨정보 _  국내공항_여행_나라씨_files/new/new.js" defer></script>
     <!-- 아이콘 -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
@@ -2268,13 +2269,26 @@
                             </span>
                             <div>
                                 <span><b>출발공항</b></span>
-                                <select name="port-name" id="start-port-name">
-                                    <option value="inchon">인천</option>
+                                <select id="depAirportSelect">
+                                    <option value="RKSI" data-name="인천" selected>인천공항</option>
+                                    <option value="RKSS" data-name="김포">김포공항</option>
+                                    <option value="RKPC" data-name="제주">제주공항</option>
+                                    <option value="RKNY" data-name="양양">양양공항</option>
+                                    <option value="RKNW" data-name="원주">원주공항</option>
+                                    <option value="RKTU" data-name="청주">청주공항</option>
+                                    <option value="RKTN" data-name="대구">대구공항</option>
+                                    <option value="RKTH" data-name="포항경주">포항경주공항</option>
+                                    <option value="RKJJ" data-name="광주">광주공항</option>
+                                    <option value="RKJB" data-name="무안">무안공항</option>
+                                    <option value="RKJY" data-name="여수">여수공항</option>
+                                    <option value="RKPU" data-name="울산">울산공항</option>
+                                    <option value="RKPK" data-name="김해">김해공항</option>
+                                    <option value="RKPS" data-name="사천">사천공항</option>
                                 </select>
                             </div>
                         </div>
 
-                        <span class="material-symbols-outlined">
+                        <span class="material-symbols-outlined" id="swapAirports">
                             sync_alt
                         </span>
 
@@ -2284,24 +2298,72 @@
                             </span>
                             <div>
                                 <span><b>도착공항</b></span>
-                                <select name="port-name" id="start-port-name">
-                                    <option value="inchon">인천</option>
+                                <select id="arrAirportSelect">
+                                    <option value="RKSI" data-name="인천" selected>인천공항</option>
+                                    <option value="RKSS" data-name="김포">김포공항</option>
+                                    <option value="RKPC" data-name="제주">제주공항</option>
+                                    <option value="RKNY" data-name="양양">양양공항</option>
+                                    <option value="RKNW" data-name="원주">원주공항</option>
+                                    <option value="RKTU" data-name="청주">청주공항</option>
+                                    <option value="RKTN" data-name="대구">대구공항</option>
+                                    <option value="RKTH" data-name="포항경주">포항경주공항</option>
+                                    <option value="RKJJ" data-name="광주">광주공항</option>
+                                    <option value="RKJB" data-name="무안">무안공항</option>
+                                    <option value="RKJY" data-name="여수">여수공항</option>
+                                    <option value="RKPU" data-name="울산">울산공항</option>
+                                    <option value="RKPK" data-name="김해">김해공항</option>
+                                    <option value="RKPS" data-name="사천">사천공항</option>
                                 </select>
                             </div>
                         </div>
                     </div>
 
                     <div class="temp_info_wrap">
-                        <div class="start-info">
+                        <div class="start-port start-info">
                             <div class="temp_header">
-                                <h3>"오늘 대체로 맑음"</h3>
-                                <div class="date">
-                                    <span>06.26(금)</span>
-                                    <span>09:00 갱신</span>
-                                    <span>(현지시각)</span>
-                                </div>
+                                <h3>"너무 더워요 조심하세요"</h3>
+                                <div class="date tm_issue_date"><a href="#">06.30.(화) 15:00 갱신 (현지시각)</a></div>
                             </div>
-                            <div class="temp_info"></div>
+
+                            <div class="airport_temp">
+                                <div class="tm_inner_top">
+                                    <div class="wea_air_temp">
+                                        <p class="wea_air_wthr">
+                                            <span class="mtph02" title="구름조금" style="hight:99px;">
+                                                <br><br><br>햇빛쨍쨍
+                                            </span>
+                                        </p>
+
+                                        <p class="wea_air_text">
+                                            <b>28.8<sup>℃</sup></b>
+                                            <br>
+                                            체감(32.3℃)
+                                            <img src="../../images/ic_sym_16.png" alt=""
+                                                style="width:20px; hight:20px; vertical-align: middle; margin-bottom: 4px;">
+
+
+                                        </p><!-- wea_air_text -->
+                                    </div><!-- wea_air_temp -->
+                                    <div class="wea_air_info">
+                                        <ul>
+                                            <li>풍향 : <b>동남</b></li>
+                                            <li>풍속 : <b>12 kt</b></li>
+                                            <li>시정 : <b>10 km ↑</b></li>
+                                            <li>운고 : <b>1,500 ft</b></li>
+                                            <li>일강수 : <b>- mm</b></li>
+
+                                        </ul>
+                                    </div><!-- wea_air_info -->
+                                </div><!-- tm_inner_top -->
+
+
+
+                            </div>
+
+                            <div class="time_temp">
+                                <img src="./temp_img.jpg" alt="time_temp">
+                            </div>
+
                             <div class="text_info">
                                 <div class="HWO">
                                     <div class="bl_tit">위험기상예보</div>
@@ -2314,16 +2376,53 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="arrive-info">
+
+
+                        <div class="arrive-port arrive-info">
                             <div class="temp_header">
                                 <h3>"오늘 대체로 맑음"</h3>
-                                <div class="date">
-                                    <span>06.26(금)</span>
-                                    <span>09:00 갱신</span>
-                                    <span>(현지시각)</span>
-                                </div>
+                                <div class="date tm_issue_date"><a href="#">06.30.(화) 15:00 갱신 (현지시각)</a></div>
                             </div>
-                            <div class="temp_info"></div>
+
+                            <div class="airport_temp">
+                                <div class="tm_inner_top">
+                                    <div class="wea_air_temp">
+                                        <p class="wea_air_wthr">
+                                            <span class="mtph02" title="구름조금" style="hight:99px;">
+                                                <br><br><br>구름조금
+                                            </span>
+                                        </p>
+
+                                        <p class="wea_air_text">
+                                            <b>24.8<sup>℃</sup></b>
+                                            <br>
+                                            체감(28.3℃)
+                                            <img src="../../images/ic_sym_16.png" alt=""
+                                                style="width:20px; hight:20px; vertical-align: middle; margin-bottom: 4px;">
+
+
+                                        </p><!-- wea_air_text -->
+                                    </div><!-- wea_air_temp -->
+                                    <div class="wea_air_info">
+                                        <ul>
+                                            <li>풍향 : <b>북서</b></li>
+                                            <li>풍속 : <b>6 kt</b></li>
+                                            <li>시정 : <b>10 km ↑</b></li>
+                                            <li>운고 : <b>1,500 ft</b></li>
+                                            <li>일강수 : <b>- mm</b></li>
+
+                                        </ul>
+                                    </div><!-- wea_air_info -->
+                                </div><!-- tm_inner_top -->
+
+
+
+                            </div>
+
+                            <div class="time_temp">
+                                <img src="./temp_img.jpg" alt="time_temp">
+                            </div>
+
                             <div class="text_info">
                                 <div class="HWO">
                                     <div class="bl_tit">위험기상예보</div>
@@ -2343,7 +2442,8 @@
                                 <caption>비정상운항 정보</caption>
                                 <thead>
                                     <tr>
-                                        <th colspan="7" style="text-align: start;"><b><span>김포</span> - <span>제주</span>
+                                        <th colspan="7" style="text-align: start;"><b><span class="start-port">김포</span>
+                                                - <span class="arrive-port">제주</span>
                                                 도착 정보</b></th>
                                     </tr>
                                     <tr>

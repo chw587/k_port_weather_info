@@ -49,6 +49,7 @@
 .temp_info_wrap>div {
     width: 50%;
     border: 1px solid #cbd7e6;
+    border-radius: 12px;
 }
 
 .temp_info_wrap>div .temp_header {
@@ -62,20 +63,35 @@
     font-weight: bold;
 }
 
-.temp_info_wrap>div .temp_header .date span {
+.temp_info_wrap>div .temp_header .date {
+        position: initial !important;
+}
+
+.temp_info_wrap>div .temp_header .date a {
     font-size: 14px;
     color: #777677;
 }
 
-.temp_info_wrap>div .temp_info {
-    height: 50px;
+.temp_info_wrap>div .airport_temp {
+    padding: 8px 16px;
+}
+
+.temp_info_wrap>div .time_temp {
     border-bottom: 1px solid #cbd7e6;
+}
+
+.temp_info_wrap>div .time_temp img {
+    width: 100%;
 }
 
 .temp_info_wrap>div .text_info>div {
     min-height: 85px;
     display: table;
     width: 100%;
+}
+
+.temp_info_wrap>div .text_info .HWO {
+    border-bottom: 1px solid #cbd7e6;
 }
 
 .temp_info_wrap>div .text_info>div>div {
@@ -95,6 +111,10 @@
 }
 
 /* table */
+.port-info_wrap {
+    display: none;
+}
+
 .port-info_wrap .table_over {
     height: 500px;
     overflow-y: auto;
